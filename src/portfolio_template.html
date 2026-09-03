@@ -15,7 +15,9 @@
     --accent-ink:#ffffff;
     --c-labsus:#2f5fe0;
     --c-bpho:#0d9488;
+    --c-bpho-ink:#ffffff;
     --c-biospace:#059669;
+    --c-biospace-ink:#ffffff;
     --c-role-a:#9333ea;
     --c-role-b:#db2777;
   }
@@ -24,11 +26,29 @@
     --border:#2f2e37; --border-soft:#242329;
     --text:#f4f4f5; --text-soft:#b7b6c0; --text-faint:#8b8a94;
     --accent:#6fa0ff; --accent-ink:#0a1224;
-    --c-labsus:#6fa0ff; --c-bpho:#2dd4bf; --c-biospace:#34d399;
+    --c-labsus:#6fa0ff; --c-bpho:#2dd4bf; --c-bpho-ink:#04231b; --c-biospace:#34d399; --c-biospace-ink:#04231b;
     --c-role-a:#c084fc; --c-role-b:#f472b6;
   }
   html{background:var(--bg);}
   ::selection{background:var(--accent);color:var(--accent-ink);}
+
+  @media print{
+    @page{ size:A4; margin:14mm 12mm; }
+    html,body{background:#fff !important;}
+    *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+    a{ text-decoration:none !important; }
+    .pf-gallery{
+      overflow-x:visible !important;
+      flex-wrap:wrap !important;
+      page-break-inside:avoid;
+    }
+    .pf-figure{
+      width:31% !important;
+      max-width:none !important;
+    }
+    .pf-stats{ break-inside:avoid; page-break-inside:avoid; }
+    h2{ break-after:avoid; page-break-after:avoid; }
+  }
 </style>
 <!-- TAILWIND -->
 <div class="mx-auto max-w-2xl px-5 pb-16 text-[var(--text)] font-sans [background:var(--bg)]">
@@ -97,11 +117,11 @@
   <section id="labsus" class="scroll-mt-4 border-t border-[var(--border-soft)] py-10">
     <article class="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--card)] shadow-xl shadow-black/5">
 
-      <div class="flex gap-3 overflow-x-auto p-3 [scrollbar-width:thin] snap-x snap-mandatory">
-        <figure class="m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
+      <div class="pf-gallery flex gap-3 overflow-x-auto p-3 [scrollbar-width:thin] snap-x snap-mandatory">
+        <figure class="pf-figure m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
           <img src="IMG:labsus" alt="Landing page do LabSUS com o painel de indicadores de mortalidade infantil" class="aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)]">
         </figure>
-        <figure class="m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
+        <figure class="pf-figure m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
           <img src="IMG:labsus_detail" alt="Seção de estatísticas e explicação de como o LabSUS funciona" class="aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)]">
         </figure>
       </div>
@@ -129,7 +149,7 @@
         </ul>
         <p class="mt-4 font-mono text-[11.5px] text-[var(--text-faint)]">Python · Django · DRF · PostgreSQL · Celery · Redis · React · Plotly · PySUS</p>
 
-        <div class="mt-5 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-[var(--border-soft)] bg-[var(--border-soft)]">
+        <div class="pf-stats mt-5 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-[var(--border-soft)] bg-[var(--border-soft)]">
           <div class="bg-[var(--card)] p-3.5"><div class="font-mono text-xl font-bold tabular-nums">8</div><div class="mt-0.5 font-mono text-[10px] uppercase tracking-wide text-[var(--text-faint)]">bases nacionais integradas</div></div>
           <div class="bg-[var(--card)] p-3.5"><div class="font-mono text-xl font-bold tabular-nums">~50</div><div class="mt-0.5 font-mono text-[10px] uppercase tracking-wide text-[var(--text-faint)]">modelos estatísticos e de ML</div></div>
           <div class="bg-[var(--card)] p-3.5"><div class="font-mono text-[13px] font-bold">assíncrono</div><div class="mt-0.5 font-mono text-[10px] uppercase tracking-wide text-[var(--text-faint)]">via Celery + Redis</div></div>
@@ -148,11 +168,11 @@
   <section id="bpho" class="scroll-mt-4 border-t border-[var(--border-soft)] py-10">
     <article class="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--card)] shadow-xl shadow-black/5">
 
-      <div class="flex gap-3 overflow-x-auto p-3 [scrollbar-width:thin] snap-x snap-mandatory">
-        <figure class="m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
+      <div class="pf-gallery flex gap-3 overflow-x-auto p-3 [scrollbar-width:thin] snap-x snap-mandatory">
+        <figure class="pf-figure m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
           <img src="IMG:bpho" alt="Página da BPHO com métricas: 28 axiomas, 6 de 6 sistemas, 56,6M triplas" class="aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)]">
         </figure>
-        <figure class="m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
+        <figure class="pf-figure m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
           <img src="IMG:bpho_detail" alt="Trecho da documentação técnica descrevendo validação da ontologia contra dados reais" class="aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)]">
         </figure>
       </div>
@@ -176,7 +196,7 @@
         </ul>
         <p class="mt-4 font-mono text-[11.5px] text-[var(--text-faint)]">RDF · OWL · SHACL · SPARQL · Python · modelagem semântica</p>
 
-        <div class="mt-5 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-[var(--border-soft)] bg-[var(--border-soft)]">
+        <div class="pf-stats mt-5 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-[var(--border-soft)] bg-[var(--border-soft)]">
           <div class="bg-[var(--card)] p-3.5"><div class="font-mono text-xl font-bold tabular-nums">28</div><div class="mt-0.5 font-mono text-[10px] uppercase tracking-wide text-[var(--text-faint)]">axiomas formais, zero revertidos</div></div>
           <div class="bg-[var(--card)] p-3.5"><div class="font-mono text-xl font-bold tabular-nums">6/6</div><div class="mt-0.5 font-mono text-[10px] uppercase tracking-wide text-[var(--text-faint)]">sistemas do SUS cobertos</div></div>
           <div class="bg-[var(--card)] p-3.5"><div class="font-mono text-xl font-bold tabular-nums">56,6M</div><div class="mt-0.5 font-mono text-[10px] uppercase tracking-wide text-[var(--text-faint)]">triplas RDF, escala nacional</div></div>
@@ -184,7 +204,7 @@
         </div>
 
         <div class="mt-5 flex flex-wrap gap-2.5">
-          <a href="https://goldenluke.github.io/BPHO/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 rounded-lg px-4 py-2.5 text-[13px] font-semibold text-[#04231b] shadow-sm transition hover:opacity-90" style="background:var(--c-bpho)"><svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>documentação</a>
+          <a href="https://goldenluke.github.io/BPHO/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 rounded-lg px-4 py-2.5 text-[13px] font-semibold text-[var(--c-bpho-ink)] shadow-sm transition hover:opacity-90" style="background:var(--c-bpho)"><svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>documentação</a>
           <a href="https://github.com/goldenluke/BPHO" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 rounded-lg border border-[var(--border)] px-4 py-2.5 text-[13px] font-medium text-[var(--text)] transition hover:border-[var(--text-faint)]"><svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>repositório</a>
         </div>
       </div>
@@ -195,11 +215,11 @@
   <section id="biospace" class="scroll-mt-4 border-t border-[var(--border-soft)] py-10">
     <article class="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--card)] shadow-xl shadow-black/5">
 
-      <div class="flex gap-3 overflow-x-auto p-3 [scrollbar-width:thin] snap-x snap-mandatory">
-        <figure class="m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
+      <div class="pf-gallery flex gap-3 overflow-x-auto p-3 [scrollbar-width:thin] snap-x snap-mandatory">
+        <figure class="pf-figure m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
           <img src="IMG:biospace" alt="Landing page do BioSpace com o título A patient is not a vector" class="aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)]">
         </figure>
-        <figure class="m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
+        <figure class="pf-figure m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
           <img src="IMG:biospace_detail" alt="Seção sobre o problema do paciente reduzido a vetor, com card do manuscrito acadêmico completo" class="aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)]">
         </figure>
       </div>
@@ -224,7 +244,7 @@
         </ul>
         <p class="mt-4 font-mono text-[11.5px] text-[var(--text-faint)]">Python · estatística · machine learning · representação multidimensional</p>
 
-        <div class="mt-5 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-[var(--border-soft)] bg-[var(--border-soft)]">
+        <div class="pf-stats mt-5 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-[var(--border-soft)] bg-[var(--border-soft)]">
           <div class="bg-[var(--card)] p-3.5"><div class="font-mono text-xl font-bold tabular-nums">9</div><div class="mt-0.5 font-mono text-[10px] uppercase tracking-wide text-[var(--text-faint)]">entidades formais no meta-modelo</div></div>
           <div class="bg-[var(--card)] p-3.5"><div class="font-mono text-xl font-bold tabular-nums">3</div><div class="mt-0.5 font-mono text-[10px] uppercase tracking-wide text-[var(--text-faint)]">bases reais de validação</div></div>
           <div class="bg-[var(--card)] p-3.5"><div class="font-mono text-[13px] font-bold">Streamlit</div><div class="mt-0.5 font-mono text-[10px] uppercase tracking-wide text-[var(--text-faint)]">dashboard interativo multi-módulo</div></div>
@@ -232,7 +252,7 @@
         </div>
 
         <div class="mt-5 flex flex-wrap gap-2.5">
-          <a href="https://goldenluke.github.io/biospace" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 rounded-lg px-4 py-2.5 text-[13px] font-semibold text-[#04231b] shadow-sm transition hover:opacity-90" style="background:var(--c-biospace)"><svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>documentação</a>
+          <a href="https://goldenluke.github.io/biospace" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 rounded-lg px-4 py-2.5 text-[13px] font-semibold text-[var(--c-biospace-ink)] shadow-sm transition hover:opacity-90" style="background:var(--c-biospace)"><svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>documentação</a>
           <a href="https://github.com/goldenluke/biospace/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 rounded-lg border border-[var(--border)] px-4 py-2.5 text-[13px] font-medium text-[var(--text)] transition hover:border-[var(--text-faint)]"><svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>repositório</a>
         </div>
       </div>
@@ -243,17 +263,17 @@
   <section id="deumrole" class="scroll-mt-4 border-t border-[var(--border-soft)] py-10">
     <article class="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--card)] shadow-xl shadow-black/5">
 
-      <div class="flex gap-3 overflow-x-auto p-3 [scrollbar-width:thin] snap-x snap-mandatory">
-        <figure class="m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
+      <div class="pf-gallery flex gap-3 overflow-x-auto p-3 [scrollbar-width:thin] snap-x snap-mandatory">
+        <figure class="pf-figure m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
           <img src="IMG:deumrole" alt="Landing page do Dê um Rolê perguntando: sua cidade tem mais coisa acontecendo do que parece" class="aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)]">
         </figure>
-        <figure class="m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
+        <figure class="pf-figure m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
           <img src="IMG:deumrole_evento" alt="Tela de detalhe de um evento no app Dê um Rolê" class="aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)]">
         </figure>
-        <figure class="m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
+        <figure class="pf-figure m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
           <img src="IMG:deumrole_perfil" alt="Tela de perfil de usuário no app Dê um Rolê" class="aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)]">
         </figure>
-        <figure class="m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
+        <figure class="pf-figure m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
           <img src="IMG:deumrole_org" alt="Tela de perfil de organização no app Dê um Rolê" class="aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)]">
         </figure>
       </div>
@@ -279,7 +299,7 @@
         </ul>
         <p class="mt-4 font-mono text-[11.5px] text-[var(--text-faint)]">Python · Django · Django Ninja · PostgreSQL/PostGIS · Redis · Docker · React · TypeScript</p>
 
-        <div class="mt-5 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-[var(--border-soft)] bg-[var(--border-soft)]">
+        <div class="pf-stats mt-5 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-[var(--border-soft)] bg-[var(--border-soft)]">
           <div class="bg-[var(--card)] p-3.5"><div class="font-mono text-xl font-bold tabular-nums">27</div><div class="mt-0.5 font-mono text-[10px] uppercase tracking-wide text-[var(--text-faint)]">capitais do Brasil com bairros mapeados</div></div>
           <div class="bg-[var(--card)] p-3.5"><div class="font-mono text-xl font-bold tabular-nums">687</div><div class="mt-0.5 font-mono text-[10px] uppercase tracking-wide text-[var(--text-faint)]">bairros válidos na cidade piloto, Goiânia</div></div>
           <div class="bg-[var(--card)] p-3.5"><div class="font-mono text-xl font-bold tabular-nums">400+</div><div class="mt-0.5 font-mono text-[10px] uppercase tracking-wide text-[var(--text-faint)]">testes contra PostGIS real</div></div>
