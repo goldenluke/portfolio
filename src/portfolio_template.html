@@ -20,6 +20,8 @@
     --c-biospace-ink:#ffffff;
     --c-role-a:#9333ea;
     --c-role-b:#db2777;
+    --c-folio:#5b4fe0;
+    --c-folio-ink:#ffffff;
   }
   :root[data-theme="dark"]{
     --bg:#0a0a0d; --bg-soft:#131318; --card:#1a1a20;
@@ -28,6 +30,7 @@
     --accent:#6fa0ff; --accent-ink:#0a1224;
     --c-labsus:#6fa0ff; --c-bpho:#2dd4bf; --c-bpho-ink:#04231b; --c-biospace:#34d399; --c-biospace-ink:#04231b;
     --c-role-a:#c084fc; --c-role-b:#f472b6;
+    --c-folio:#a89cfa; --c-folio-ink:#1a1233;
   }
   html{background:var(--bg);}
   ::selection{background:var(--accent);color:var(--accent-ink);}
@@ -47,11 +50,14 @@
       max-width:none !important;
     }
     .pf-stats{ break-inside:avoid; page-break-inside:avoid; }
+    .pf-skills{ break-before:page; page-break-before:always; }
+    .pf-hackathon{ break-inside:avoid; page-break-inside:avoid; }
     h2{ break-after:avoid; page-break-after:avoid; }
+    #pf-root{ max-width:820px !important; zoom:0.66; }
   }
 </style>
 <!-- TAILWIND -->
-<div class="mx-auto max-w-2xl px-5 pb-16 text-[var(--text)] font-sans [background:var(--bg)]">
+<div id="pf-root" class="mx-auto max-w-2xl px-5 pb-16 text-[var(--text)] font-sans [background:var(--bg)]">
 
   <!-- ===================== MASTHEAD ===================== -->
   <header class="pt-12 pb-10 sm:pt-16">
@@ -114,6 +120,7 @@
       <a href="#labsus" class="rounded-full border border-[var(--border)] bg-[var(--card)] px-3.5 py-1.5 text-[12.5px] font-medium text-[var(--text)] transition hover:border-[var(--text-faint)]">LabSUS</a>
       <a href="#bpho" class="rounded-full border border-[var(--border)] bg-[var(--card)] px-3.5 py-1.5 text-[12.5px] font-medium text-[var(--text)] transition hover:border-[var(--text-faint)]">BPHO</a>
       <a href="#biospace" class="rounded-full border border-[var(--border)] bg-[var(--card)] px-3.5 py-1.5 text-[12.5px] font-medium text-[var(--text)] transition hover:border-[var(--text-faint)]">BioSpace</a>
+      <a href="#folio" class="rounded-full border border-[var(--border)] bg-[var(--card)] px-3.5 py-1.5 text-[12.5px] font-medium text-[var(--text)] transition hover:border-[var(--text-faint)]">Folio</a>
       <a href="#deumrole" class="rounded-full border border-[var(--border)] bg-[var(--card)] px-3.5 py-1.5 text-[12.5px] font-medium text-[var(--text)] transition hover:border-[var(--text-faint)]">Dê um Rolê</a>
     </div>
   </nav>
@@ -264,6 +271,58 @@
     </article>
   </section>
 
+  <!-- ===================== FOLIO ===================== -->
+  <section id="folio" class="scroll-mt-4 border-t border-[var(--border-soft)] py-10">
+    <article class="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--card)] shadow-xl shadow-black/5">
+
+      <div class="pf-gallery flex gap-3 overflow-x-auto p-3 [scrollbar-width:thin] snap-x snap-mandatory">
+        <figure class="pf-figure m-0 w-[85%] max-w-[420px] shrink-0 snap-start sm:w-[440px]">
+          <img src="IMG:folio_workspace" alt="Workspace do Folio com painel de pesquisa, arquivos recentes e panorama do vault" class="aspect-[16/9] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)]">
+        </figure>
+        <figure class="pf-figure m-0 w-[85%] max-w-[420px] shrink-0 snap-start sm:w-[440px]">
+          <img src="IMG:folio_editor" alt="Editor Markdown do Folio com preview ao vivo de uma capa ABNT de TCC" class="aspect-[16/9] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)]">
+        </figure>
+        <figure class="pf-figure m-0 w-[85%] max-w-[420px] shrink-0 snap-start sm:w-[440px]">
+          <img src="IMG:folio_article" alt="Artigo acadêmico renderizado no Folio com citações, figura e sumário de navegação" class="aspect-[16/9] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)]">
+        </figure>
+      </div>
+
+      <div class="p-6 pt-4">
+        <span class="inline-flex items-center gap-1.5 rounded-full border border-[var(--border)] px-2.5 py-1 font-mono text-[10.5px] uppercase tracking-wide text-[var(--text-faint)]">
+          <span class="h-1.5 w-1.5 rounded-full" style="background:var(--c-folio)"></span>
+          aplicativo desktop · workspace acadêmico local-first
+        </span>
+
+        <h2 class="mt-4 text-2xl font-bold tracking-tight sm:text-[28px]">Folio</h2>
+        <p class="mt-2 text-[16px] italic leading-snug text-[var(--text)]">"Pesquisa, escrita e publicação no mesmo lugar."</p>
+
+        <p class="mt-4 max-w-[62ch] text-[15px] leading-relaxed text-[var(--text-soft)]">
+          Ambiente desktop (Electron) que junta leitura, biblioteca, escrita e entrega acadêmica num único workspace local-first: os documentos ficam em Markdown, as referências em CSL-JSON, e nada fica preso numa plataforma online.
+        </p>
+        <ul class="mt-4 max-w-[62ch] space-y-1.5 text-[15px] leading-relaxed text-[var(--text-soft)]">
+          <li class="flex gap-2"><span class="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-[var(--text-faint)]"></span><span>Editor Markdown com preview ao vivo, estrutura, diagnósticos e referências cruzadas, sobre um motor de citação ABNT próprio — evitei o citeproc-js por incompatibilidade de licença (copyleft) com um produto comercial fechado.</span></li>
+          <li class="flex gap-2"><span class="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-[var(--text-faint)]"></span><span>Biblioteca de referências em CSL-JSON com PDFs, anotações, literature notes e captura web estruturada (Schema.org, DOI, Dublin Core).</span></li>
+          <li class="flex gap-2"><span class="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-[var(--text-faint)]"></span><span>Projetos de pesquisa, canvas argumentativo, diário e revisão sistemática antes da entrega.</span></li>
+          <li class="flex gap-2"><span class="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-[var(--text-faint)]"></span><span>Exportação para PDF, DOCX e HTML a partir da mesma árvore semântica, com profiles de publicação separados do conteúdo autoral.</span></li>
+          <li class="flex gap-2"><span class="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-[var(--text-faint)]"></span><span>Monorepo com fronteiras de arquitetura fiscalizadas em CI (dependency-cruiser) e decisões de design registradas em ADRs.</span></li>
+        </ul>
+        <p class="mt-4 font-mono text-[11.5px] text-[var(--text-faint)]">TypeScript · Electron · CodeMirror · SQLite/FTS5 · Paged.js · pnpm workspaces</p>
+
+        <div class="pf-stats mt-5 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-[var(--border-soft)] bg-[var(--border-soft)]">
+          <div class="bg-[var(--card)] p-3.5"><div class="font-mono text-xl font-bold tabular-nums">49</div><div class="mt-0.5 font-mono text-[10px] uppercase tracking-wide text-[var(--text-faint)]">pacotes no monorepo, arquitetura em camadas</div></div>
+          <div class="bg-[var(--card)] p-3.5"><div class="font-mono text-xl font-bold tabular-nums">596</div><div class="mt-0.5 font-mono text-[10px] uppercase tracking-wide text-[var(--text-faint)]">arquivos de teste automatizados</div></div>
+          <div class="bg-[var(--card)] p-3.5"><div class="font-mono text-xl font-bold tabular-nums">81</div><div class="mt-0.5 font-mono text-[10px] uppercase tracking-wide text-[var(--text-faint)]">ADRs — decisões de arquitetura documentadas</div></div>
+          <div class="bg-[var(--card)] p-3.5"><div class="font-mono text-[13px] font-bold">local-first</div><div class="mt-0.5 font-mono text-[10px] uppercase tracking-wide text-[var(--text-faint)]">índice SQLite descartável, arquivos são seus</div></div>
+        </div>
+
+        <div class="mt-5 flex flex-wrap gap-2.5">
+          <a href="https://github.com/goldenluke/folio" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 rounded-lg px-4 py-2.5 text-[13px] font-semibold text-[var(--c-folio-ink)] shadow-sm transition hover:opacity-90" style="background:var(--c-folio)"><svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>repositório</a>
+          <span class="font-mono text-[12px] text-[var(--text-faint)]">produto em desenvolvimento — distribuição Linux x64</span>
+        </div>
+      </div>
+    </article>
+  </section>
+
   <!-- ===================== DÊ UM ROLÊ ===================== -->
   <section id="deumrole" class="scroll-mt-4 border-t border-[var(--border-soft)] py-10">
     <article class="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--card)] shadow-xl shadow-black/5">
@@ -320,7 +379,7 @@
   </section>
 
   <!-- ===================== SKILLS ===================== -->
-  <section class="border-t border-[var(--border-soft)] py-8">
+  <section class="pf-skills border-t border-[var(--border-soft)] py-8">
     <h3 class="mb-5 font-mono text-[11px] font-semibold uppercase tracking-widest text-[var(--accent)]">Competências técnicas</h3>
     <div class="space-y-4">
       <div>
@@ -442,7 +501,7 @@
           </ul>
         </div>
       </div>
-      <div class="flex flex-col gap-2 sm:flex-row sm:gap-4">
+      <div class="pf-hackathon flex flex-col gap-2 sm:flex-row sm:gap-4">
         <div class="shrink-0 pt-0.5 font-mono text-[11px] leading-snug text-[var(--text-faint)] sm:w-[92px]">abr/2026</div>
         <div>
           <p class="text-[14.5px] font-semibold text-[var(--text)]">Harvard HSIL Hackathon 2026</p>
@@ -500,7 +559,7 @@
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="border-t border-[var(--border-soft)] pt-8 font-mono text-[11.5px] text-[var(--text-faint)]">
-    <p>LabSUS · BPHO · BioSpace · Dê um Rolê — projetos de <span class="text-[var(--text-soft)]">github.com/goldenluke</span></p>
+    <p>LabSUS · BPHO · BioSpace · Folio · Dê um Rolê — projetos de <span class="text-[var(--text-soft)]">github.com/goldenluke</span></p>
   </footer>
 
 </div>
