@@ -54,6 +54,7 @@
     .pf-hackathon{ break-inside:avoid; page-break-inside:avoid; }
     h2{ break-after:avoid; page-break-after:avoid; }
     #pf-root{ max-width:820px !important; zoom:0.66; }
+    #pf-lightbox{ display:none !important; }
   }
 </style>
 <!-- TAILWIND -->
@@ -131,10 +132,10 @@
 
       <div class="pf-gallery flex gap-3 overflow-x-auto p-3 [scrollbar-width:thin] snap-x snap-mandatory">
         <figure class="pf-figure m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
-          <img src="IMG:labsus" alt="Landing page do LabSUS com o painel de indicadores de mortalidade infantil" class="aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)]">
+          <img src="IMG:labsus" alt="Landing page do LabSUS com o painel de indicadores de mortalidade infantil" class="pf-zoomable aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)] cursor-zoom-in transition hover:opacity-90">
         </figure>
         <figure class="pf-figure m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
-          <img src="IMG:labsus_detail" alt="Seção de estatísticas e explicação de como o LabSUS funciona" class="aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)]">
+          <img src="IMG:labsus_detail" alt="Seção de estatísticas e explicação de como o LabSUS funciona" class="pf-zoomable aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)] cursor-zoom-in transition hover:opacity-90">
         </figure>
       </div>
 
@@ -182,10 +183,10 @@
 
       <div class="pf-gallery flex gap-3 overflow-x-auto p-3 [scrollbar-width:thin] snap-x snap-mandatory">
         <figure class="pf-figure m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
-          <img src="IMG:bpho" alt="Página da BPHO com métricas: 28 axiomas, 6 de 6 sistemas, 56,6M triplas" class="aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)]">
+          <img src="IMG:bpho" alt="Página da BPHO com métricas: 28 axiomas, 6 de 6 sistemas, 56,6M triplas" class="pf-zoomable aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)] cursor-zoom-in transition hover:opacity-90">
         </figure>
         <figure class="pf-figure m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
-          <img src="IMG:bpho_detail" alt="Trecho da documentação técnica descrevendo validação da ontologia contra dados reais" class="aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)]">
+          <img src="IMG:bpho_detail" alt="Trecho da documentação técnica descrevendo validação da ontologia contra dados reais" class="pf-zoomable aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)] cursor-zoom-in transition hover:opacity-90">
         </figure>
       </div>
 
@@ -229,10 +230,10 @@
 
       <div class="pf-gallery flex gap-3 overflow-x-auto p-3 [scrollbar-width:thin] snap-x snap-mandatory">
         <figure class="pf-figure m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
-          <img src="IMG:biospace" alt="Landing page do BioSpace com o título A patient is not a vector" class="aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)]">
+          <img src="IMG:biospace" alt="Landing page do BioSpace com o título A patient is not a vector" class="pf-zoomable aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)] cursor-zoom-in transition hover:opacity-90">
         </figure>
         <figure class="pf-figure m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
-          <img src="IMG:biospace_detail" alt="Seção sobre o problema do paciente reduzido a vetor, com card do manuscrito acadêmico completo" class="aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)]">
+          <img src="IMG:biospace_detail" alt="Seção sobre o problema do paciente reduzido a vetor, com card do manuscrito acadêmico completo" class="pf-zoomable aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)] cursor-zoom-in transition hover:opacity-90">
         </figure>
       </div>
 
@@ -277,13 +278,13 @@
 
       <div class="pf-gallery flex gap-3 overflow-x-auto p-3 [scrollbar-width:thin] snap-x snap-mandatory">
         <figure class="pf-figure m-0 w-[85%] max-w-[420px] shrink-0 snap-start sm:w-[440px]">
-          <img src="IMG:folio_workspace" alt="Workspace do Folio com painel de pesquisa, arquivos recentes e panorama do vault" class="aspect-[16/9] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)]">
+          <img src="IMG:folio_workspace" alt="Workspace do Folio com painel de pesquisa, arquivos recentes e panorama do vault" class="pf-zoomable aspect-[16/9] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)] cursor-zoom-in transition hover:opacity-90">
         </figure>
         <figure class="pf-figure m-0 w-[85%] max-w-[420px] shrink-0 snap-start sm:w-[440px]">
-          <img src="IMG:folio_editor" alt="Editor Markdown do Folio com preview ao vivo de uma capa ABNT de TCC" class="aspect-[16/9] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)]">
+          <img src="IMG:folio_editor" alt="Editor Markdown do Folio com preview ao vivo de uma capa ABNT de TCC" class="pf-zoomable aspect-[16/9] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)] cursor-zoom-in transition hover:opacity-90">
         </figure>
         <figure class="pf-figure m-0 w-[85%] max-w-[420px] shrink-0 snap-start sm:w-[440px]">
-          <img src="IMG:folio_article" alt="Artigo acadêmico renderizado no Folio com citações, figura e sumário de navegação" class="aspect-[16/9] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)]">
+          <img src="IMG:folio_article" alt="Artigo acadêmico renderizado no Folio com citações, figura e sumário de navegação" class="pf-zoomable aspect-[16/9] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)] cursor-zoom-in transition hover:opacity-90">
         </figure>
       </div>
 
@@ -329,16 +330,16 @@
 
       <div class="pf-gallery flex gap-3 overflow-x-auto p-3 [scrollbar-width:thin] snap-x snap-mandatory">
         <figure class="pf-figure m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
-          <img src="IMG:deumrole" alt="Landing page do Dê um Rolê perguntando: sua cidade tem mais coisa acontecendo do que parece" class="aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)]">
+          <img src="IMG:deumrole" alt="Landing page do Dê um Rolê perguntando: sua cidade tem mais coisa acontecendo do que parece" class="pf-zoomable aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)] cursor-zoom-in transition hover:opacity-90">
         </figure>
         <figure class="pf-figure m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
-          <img src="IMG:deumrole_evento" alt="Tela de detalhe de um evento no app Dê um Rolê" class="aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)]">
+          <img src="IMG:deumrole_evento" alt="Tela de detalhe de um evento no app Dê um Rolê" class="pf-zoomable aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)] cursor-zoom-in transition hover:opacity-90">
         </figure>
         <figure class="pf-figure m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
-          <img src="IMG:deumrole_perfil" alt="Tela de perfil de usuário no app Dê um Rolê" class="aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)]">
+          <img src="IMG:deumrole_perfil" alt="Tela de perfil de usuário no app Dê um Rolê" class="pf-zoomable aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)] cursor-zoom-in transition hover:opacity-90">
         </figure>
         <figure class="pf-figure m-0 w-[72%] max-w-[280px] shrink-0 snap-start sm:w-[320px]">
-          <img src="IMG:deumrole_org" alt="Tela de perfil de organização no app Dê um Rolê" class="aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)]">
+          <img src="IMG:deumrole_org" alt="Tela de perfil de organização no app Dê um Rolê" class="pf-zoomable aspect-[9/16] w-full rounded-xl border border-[var(--border-soft)] object-cover object-top bg-[var(--bg-soft)] cursor-zoom-in transition hover:opacity-90">
         </figure>
       </div>
 
@@ -561,5 +562,29 @@
   <footer class="border-t border-[var(--border-soft)] pt-8 font-mono text-[11.5px] text-[var(--text-faint)]">
     <p>LabSUS · BPHO · BioSpace · Folio · Dê um Rolê — projetos de <span class="text-[var(--text-soft)]">github.com/goldenluke</span></p>
   </footer>
+
+  <dialog id="pf-lightbox" class="relative m-auto max-h-[92vh] max-w-[94vw] rounded-2xl border border-[var(--border)] bg-[var(--card)] p-2 backdrop:bg-black/80">
+    <button id="pf-lightbox-close" type="button" aria-label="Fechar imagem ampliada"
+            class="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-[var(--bg-soft)] text-lg font-bold text-[var(--text)] shadow-sm">×</button>
+    <img id="pf-lightbox-img" src="" alt="" class="block max-h-[88vh] max-w-full rounded-xl object-contain">
+  </dialog>
+
+  <script>
+  (function(){
+    var dlg = document.getElementById('pf-lightbox');
+    var img = document.getElementById('pf-lightbox-img');
+    if(!dlg || !img) return;
+    document.querySelectorAll('.pf-zoomable').forEach(function(el){
+      el.addEventListener('click', function(){
+        img.src = el.currentSrc || el.src;
+        img.alt = el.alt || '';
+        dlg.showModal();
+      });
+    });
+    var closeBtn = document.getElementById('pf-lightbox-close');
+    if(closeBtn) closeBtn.addEventListener('click', function(){ dlg.close(); });
+    dlg.addEventListener('click', function(e){ if(e.target === dlg) dlg.close(); });
+  })();
+  </script>
 
 </div>
